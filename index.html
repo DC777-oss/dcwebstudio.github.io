@@ -1,473 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daksh Web Studio | Vibrant Web Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamer-Hood</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
-    /* Reset & base */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
-      background: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+      overflow-x: hidden;
     }
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Header & nav */
     header {
-      background: #282c34;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-    }
-    .logo {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      letter-spacing: 1px;
-    }
-    ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-    ul li a {
-      font-weight: 600;
-      font-size: 1rem;
-      color: white;
       position: relative;
-    }
-    ul li a:hover,
-    ul li a.active {
-      color: #61dafb;
-    }
-
-    /* Hamburger Menu for small screens */
-    .menu-icon {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-      gap: 5px;
-    }
-    .menu-icon div {
-      width: 25px;
-      height: 3px;
-      background: white;
-      border-radius: 2px;
-    }
-
-    /* Hero Section */
-    .hero {
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-      color: #222;
-    }
-    .hero p {
-      font-size: 1.15rem;
-      color: #555;
-      margin-bottom: 2rem;
-    }
-    .cta-button {
-      display: inline-block;
-      background: #0077cc;
-      color: white;
-      padding: 0.75rem 2rem;
-      font-weight: 600;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
-    .cta-button:hover {
-      background: #005fa3;
-    }
-
-    /* About Section */
-    .about {
-      max-width: 700px;
-      margin: 4rem auto;
-      padding: 0 1rem;
-      text-align: center;
-    }
-    .about h2 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .about p {
-      font-size: 1.1rem;
-      color: #444;
-    }
-
-    /* Projects Section */
-    .projects {
-      max-width: 1100px;
-      margin: 4rem auto;
-      padding: 0 1rem;
-    }
-    .projects h2 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .project-grid {
+      height: 100vh;
       display: flex;
-      gap: 2rem;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #0a0a0a, #1f1f1f);
+      animation: fadeIn 2s ease forwards;
+      overflow: hidden;
+    }
+    .animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #00ffea44 0%, transparent 70%);
+      animation: moveBg 10s linear infinite;
+      z-index: 0;
+    }
+    @keyframes moveBg {
+      0% { transform: translate(-25%, -25%); }
+      50% { transform: translate(0%, 0%); }
+      100% { transform: translate(-25%, -25%); }
+    }
+    header h1, header p, .btn {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 4rem;
+      color: #00ffea;
+      text-shadow: 0 0 10px #00ffea;
+      animation: slideDown 1s ease-in-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 10px;
+      animation: slideUp 1s ease-in-out 0.5s;
+      animation-fill-mode: both;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes slideDown {
+      0% { transform: translateY(-100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideUp {
+      0% { transform: translateY(100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border: none;
+      background: #00ffea;
+      color: #000;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #00ffea;
+    }
+    section {
+      padding: 50px;
+      text-align: center;
+      background-color: #121212;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #00ffea;
+    }
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
       flex-wrap: wrap;
     }
-    .project-card {
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      width: 320px;
-      padding-bottom: 1rem;
-      display: flex;
-      flex-direction: column;
+    .filter-btn {
+      background: transparent;
+      color: #00ffea;
+      border: 1px solid #00ffea;
+      padding: 8px 20px;
+      border-radius: 20px;
       cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.3s, color 0.3s;
     }
-    .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #00ffea;
+      color: #000;
     }
-    .project-card img {
-      width: 100%;
-      height: 180px;
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
-      object-fit: cover;
-    }
-    .project-card h3 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      margin: 1rem;
-      font-size: 1.25rem;
-      color: #222;
-    }
-    .project-card p {
-      font-size: 1rem;
-      color: #555;
-      margin: 0 1rem 1rem;
-      flex-grow: 1;
-    }
-    .project-button {
-      background: #0077cc;
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 5px;
-      margin: 0 1rem 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      align-self: flex-start;
-      transition: background-color 0.3s ease;
-      text-align: center;
-    }
-    .project-button:hover {
-      background: #005fa3;
-    }
-
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.6);
-      padding: 2rem;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal:target {
-      display: flex;
-    }
-    .modal-content {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      max-width: 600px;
-      width: 90%;
-      position: relative;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-    .modal-content img {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-    }
-    .modal-content h3 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      color: #222;
-    }
-    .modal-content p {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 1rem;
-    }
-    .close {
-      position: absolute;
-      top: 0.5rem;
-      right: 1rem;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #aaa;
-      text-decoration: none;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .close:hover {
-      color: #222;
-    }
-
-    /* Contact Section */
-    .contact {
-      max-width: 600px;
-      margin: 4rem auto 3rem;
-      padding: 0 1rem;
-      text-align: center;
-    }
-    .contact h2 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    input, textarea {
-      padding: 0.8rem 1rem;
-      font-size: 1rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-family: 'Inter', sans-serif;
-      resize: vertical;
-      transition: border-color 0.3s ease;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: #0077cc;
-      box-shadow: 0 0 5px #0077cc;
-    }
-    textarea {
-      min-height: 100px;
-    }
-    button[type="submit"] {
-      background: #0077cc;
-      color: white;
-      padding: 0.8rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button[type="submit"]:hover {
-      background: #005fa3;
-    }
-    #form-response {
-      margin-top: 1rem;
-      color: green;
-      font-weight: 600;
+    .category {
+      margin-top: 40px;
       display: none;
     }
-
-    /* Footer */
-    footer {
-      background: #282c34;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      font-size: 0.9rem;
+    .category.active {
+      display: block;
     }
-    footer a {
-      color: #61dafb;
-      margin: 0 0.5rem;
+    .category h3 {
+      color: #00ffeab3;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #00ffeab3;
+      display: inline-block;
+      padding-bottom: 5px;
     }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .project-grid {
-        flex-direction: column;
-        align-items: center;
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .product {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffea22;
+      transition: transform 0.4s;
+    }
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #00ffea55;
+    }
+    .product h4 {
+      margin-bottom: 10px;
+      color: #00ffea;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.5rem;
       }
-      ul {
-        display: none;
-      }
-      .menu-icon {
-        display: flex;
+      .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <h1 class="logo">Daksh Web Studio</h1>
-      <div class="menu-icon" aria-label="Toggle Menu" tabindex="0" role="button" onclick="toggleMenu()" onkeypress="if(event.key==='Enter') toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <ul id="nav-links">
-        <li><a href="#home" class="nav-link active">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="animated-bg"></div>
+    <h1>Gamer-Hood</h1>
+    <p>Your Gear Hub for Gamers, Teens & Creators</p>
+    <button class="btn">Shop Now</button>
   </header>
 
-  <section id="home" class="hero">
-    <h1>Build Your Dream Website!</h1>
-    <p>Hi, I'm Daksh, a 13-year-old web designer from India, creating vibrant, mobile-friendly websites that make your business shine.</p>
-    <a href="#contact" class="cta-button">Get Started Now</a>
+  <section>
+    <h2>Shop by Category</h2>
+    <div class="filters">
+      <button class="filter-btn active" onclick="showCategory('gaming')">🎮 Gaming Gear</button>
+      <button class="filter-btn" onclick="showCategory('desk')">💡 Desk & Room Setup</button>
+      <button class="filter-btn" onclick="showCategory('creator')">🎥 Creator Tools</button>
+    </div>
+
+    <div id="gaming" class="category active">
+      <h3>🎮 Gaming Gear</h3>
+      <div class="product-grid">
+        <div class="product">
+          <h4>RGB LED Strip Light</h4>
+          <p>Perfect for gaming setups and cozy vibes. Plug & play with remote control.</p>
+        </div>
+        <div class="product">
+          <h4>Gaming Mouse Pad</h4>
+          <p>Extended surface, RGB lighting, anti-slip base. Pure gamer feel.</p>
+        </div>
+        <div class="product">
+          <h4>Gaming Headset</h4>
+          <p>Immersive sound with noise-cancellation and LED effects.</p>
+        </div>
+        <div class="product">
+          <h4>Mobile Gaming Triggers</h4>
+          <p>Responsive triggers for competitive smartphone gaming.</p>
+        </div>
+        <div class="product">
+          <h4>Gaming Controller</h4>
+          <p>Wireless, ergonomic grip with turbo function for consoles and PCs.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="desk" class="category">
+      <h3>💡 Desk & Room Setup</h3>
+      <div class="product-grid">
+        <div class="product">
+          <h4>Desk Cable Organizer</h4>
+          <p>Say goodbye to tangled wires. Clean look for creators and students.</p>
+        </div>
+        <div class="product">
+          <h4>USB Mini Fan</h4>
+          <p>Cool and compact. Perfect for long gaming sessions.</p>
+        </div>
+        <div class="product">
+          <h4>LED Neon Sign</h4>
+          <p>Brighten up your room with custom neon light decor.</p>
+        </div>
+        <div class="product">
+          <h4>Ergonomic Wrist Rest</h4>
+          <p>Supportive cushion for keyboard or mouse to prevent fatigue.</p>
+        </div>
+        <div class="product">
+          <h4>Adjustable Laptop Stand</h4>
+          <p>Keep your laptop cool and aligned at eye level for better posture.</p>
+        </div>
+        <div class="product">
+          <h4>Desk Mat</h4>
+          <p>Sleek, waterproof surface for both keyboard and mouse. Adds style to your desk.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="creator" class="category">
+      <h3>🎥 Creator Tools</h3>
+      <div class="product-grid">
+        <div class="product">
+          <h4>Mini Ring Light</h4>
+          <p>Ideal for streaming, selfies, and online classes. Adjustable brightness.</p>
+        </div>
+        <div class="product">
+          <h4>Phone Tripod Stand</h4>
+          <p>Flexible legs, universal grip. For YouTubers and vloggers.</p>
+        </div>
+        <div class="product">
+          <h4>USB Microphone</h4>
+          <p>Clear voice quality for recording, podcasting, or live streams.</p>
+        </div>
+        <div class="product">
+          <h4>Backdrop Green Screen</h4>
+          <p>Perfect for streamers and creators using virtual backgrounds.</p>
+        </div>
+        <div class="product">
+          <h4>LED Softbox Lighting</h4>
+          <p>Professional soft lighting for YouTube or photography studios.</p>
+        </div>
+        <div class="product">
+          <h4>Wireless Lavalier Mic</h4>
+          <p>Clip-on mic with noise reduction for content creators on the move.</p>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>I’m Daksh, a passionate young web designer from India, skilled in HTML, CSS, and JavaScript. I craft colorful, user-friendly websites for small businesses like restaurants, tutors, and shops. My designs are bold, responsive, and affordable, helping you stand out online. Let’s create something extraordinary!</p>
-  </section>
-
-  <section id="projects" class="projects">
-    <h2>Featured Projects</h2>
-    <div class="project-grid">
-      <div class="project-card" tabindex="0">
-        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Restaurant Homepage" />
-        <h3>Restaurant Homepage</h3>
-        <p>A colorful, responsive homepage with a menu and contact form designed for a local restaurant.</p>
-        <a href="#modal1" class="project-button">View Details</a>
-      </div>
-
-      <div class="project-card" tabindex="0">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Tutor Portfolio" />
-        <h3>Tutor Portfolio</h3>
-        <p>A lively portfolio website showcasing tutoring services, schedules, and testimonials.</p>
-        <a href="#modal2" class="project-button">View Details</a>
-      </div>
-
-      <div class="project-card" tabindex="0">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Shop" />
-        <h3>E-Commerce Shop</h3>
-        <p>An online store layout designed for small shops with product listings and checkout features.</p>
-        <a href="#modal3" class="project-button">View Details</a>
-      </div>
-    </div>
-
-    <!-- Modals -->
-    <div id="modal1" class="modal" tabindex="-1" aria-hidden="true">
-      <div class="modal-content">
-        <a href="#projects" class="close" aria-label="Close modal">×</a>
-        <h3>Restaurant Homepage</h3>
-        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Restaurant Homepage" />
-        <p>Designed a dynamic, mobile-friendly homepage featuring a colorful menu, image gallery, and contact form to help a local restaurant attract customers.</p>
-      </div>
-    </div>
-
-    <div id="modal2" class="modal" tabindex="-1" aria-hidden="true">
-      <div class="modal-content">
-        <a href="#projects" class="close" aria-label="Close modal">×</a>
-        <h3>Tutor Portfolio</h3>
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Tutor Portfolio" />
-        <p>Created a vibrant portfolio site with class schedules, testimonials, and booking forms for a local tutor.</p>
-      </div>
-    </div>
-
-    <div id="modal3" class="modal" tabindex="-1" aria-hidden="true">
-      <div class="modal-content">
-        <a href="#projects" class="close" aria-label="Close modal">×</a>
-        <h3>E-Commerce Shop</h3>
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="E-Commerce Shop" />
-        <p>Created a bold online store layout with product listings and a sleek checkout interface for small businesses.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form" onsubmit="submitForm(event)">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit" class="cta-button">Send Message</button>
-    </form>
-    <div id="form-response">
-      <p>Thanks for reaching out! My parent will contact you soon via: <br />
-      Email: dakshchechi69@gmail.com | WhatsApp: [Your Parent’s WhatsApp]</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>Connect with me: <a href="#">LinkedIn</a> | <a href="#">GitHub</a></p>
-    <p>© 2025 Daksh Web Studio. All rights reserved.</p>
-  </footer>
 
   <script>
-    // Responsive nav toggle for small screens
-    const menuIcon = document.querySelector('.menu-icon');
-    const navLinks = document.getElementById('nav-links');
-    function toggleMenu() {
-      if(navLinks.style.display === 'flex'){
-        navLinks.style.display = 'none';
-      } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.background = '#282c34';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '56px';
-        navLinks.style.right = '2rem';
-        navLinks.style.padding = '1rem 2rem';
-        navLinks.style.borderRadius = '8px';
-      }
-    }
-
-    // Simple form submission simulation
-    function submitForm(event) {
-      event.preventDefault();
-      document.getElementById('contact-form').style.display = 'none';
-      document.getElementById('form-response').style.display = 'block';
+    function showCategory(id) {
+      document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
     }
   </script>
 </body>
