@@ -10,6 +10,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
     body {
       font-family: 'Orbitron', sans-serif;
@@ -17,6 +18,41 @@
       color: white;
       overflow-x: hidden;
     }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #121212ee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      box-shadow: 0 0 10px #00ffea55;
+    }
+    .logo {
+      font-size: 1.5rem;
+      color: #00ffea;
+      text-shadow: 0 0 8px #00ffea;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #00ffea;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .nav-links a:hover {
+      background: #00ffea;
+      color: #000;
+    }
+
     header {
       position: relative;
       height: 60vh;
@@ -27,6 +63,7 @@
       background: linear-gradient(180deg, #0a0a0a, #1f1f1f);
       animation: fadeIn 2s ease forwards;
       overflow: hidden;
+      padding-top: 60px;
     }
     .animated-bg {
       position: absolute;
@@ -87,8 +124,9 @@
       transform: scale(1.1);
       box-shadow: 0 0 15px #00ffea;
     }
+
     section {
-      padding: 50px;
+      padding: 80px 50px 50px;
       text-align: center;
       background-color: #121212;
     }
@@ -96,6 +134,7 @@
       margin-bottom: 20px;
       color: #00ffea;
     }
+
     .filters {
       display: flex;
       justify-content: center;
@@ -117,6 +156,7 @@
       background: #00ffea;
       color: #000;
     }
+
     .category {
       margin-top: 40px;
       display: none;
@@ -132,12 +172,14 @@
       display: inline-block;
       padding-bottom: 5px;
     }
+
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
       margin-top: 20px;
     }
+
     .product {
       background: #1a1a1a;
       padding: 20px;
@@ -149,10 +191,12 @@
       transform: translateY(-10px);
       box-shadow: 0 0 20px #00ffea55;
     }
+
     .product h4 {
       margin-bottom: 10px;
       color: #00ffea;
     }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 3rem;
@@ -161,18 +205,34 @@
         padding: 8px 16px;
         font-size: 0.9rem;
       }
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <nav>
+    <div class="logo">Gamer-Hood</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQs</a>
+    </div>
+  </nav>
+
+  <header id="home">
     <div class="animated-bg"></div>
     <h1>Gamer-Hood</h1>
     <p>Your Gear Hub for Gamers, Teens & Creators</p>
-    <button class="btn">Shop Now</button>
+    <a href="#shop"><button class="btn">Shop Now</button></a>
   </header>
 
-  <section>
+  <section id="shop">
     <h2>Shop by Category</h2>
     <div class="filters">
       <button class="filter-btn active" onclick="showCategory('gaming')">🎮 Gaming Gear</button>
@@ -183,88 +243,622 @@
     <div id="gaming" class="category active">
       <h3>🎮 Gaming Gear</h3>
       <div class="product-grid">
-        <div class="product">
-          <h4>RGB LED Strip Light</h4>
-          <p>Perfect for gaming setups and cozy vibes. Plug & play with remote control.</p>
-        </div>
-        <div class="product">
-          <h4>Gaming Mouse Pad</h4>
-          <p>Extended surface, RGB lighting, anti-slip base. Pure gamer feel.</p>
-        </div>
-        <div class="product">
-          <h4>Gaming Headset</h4>
-          <p>Immersive sound with noise-cancellation and LED effects.</p>
-        </div>
-        <div class="product">
-          <h4>Mobile Gaming Triggers</h4>
-          <p>Responsive triggers for competitive smartphone gaming.</p>
-        </div>
-        <div class="product">
-          <h4>Gaming Controller</h4>
-          <p>Wireless, ergonomic grip with turbo function for consoles and PCs.</p>
-        </div>
+        <!-- Gaming gear products here -->
+        <div class="product"><h4>RGB LED Strip Light</h4><p>Perfect for gaming setups and cozy vibes.</p></div>
+        <!-- Add more -->
       </div>
     </div>
 
     <div id="desk" class="category">
       <h3>💡 Desk & Room Setup</h3>
       <div class="product-grid">
-        <div class="product">
-          <h4>Desk Cable Organizer</h4>
-          <p>Say goodbye to tangled wires. Clean look for creators and students.</p>
-        </div>
-        <div class="product">
-          <h4>USB Mini Fan</h4>
-          <p>Cool and compact. Perfect for long gaming sessions.</p>
-        </div>
-        <div class="product">
-          <h4>LED Neon Sign</h4>
-          <p>Brighten up your room with custom neon light decor.</p>
-        </div>
-        <div class="product">
-          <h4>Ergonomic Wrist Rest</h4>
-          <p>Supportive cushion for keyboard or mouse to prevent fatigue.</p>
-        </div>
-        <div class="product">
-          <h4>Adjustable Laptop Stand</h4>
-          <p>Keep your laptop cool and aligned at eye level for better posture.</p>
-        </div>
-        <div class="product">
-          <h4>Desk Mat</h4>
-          <p>Sleek, waterproof surface for both keyboard and mouse. Adds style to your desk.</p>
-        </div>
+        <!-- Desk products -->
       </div>
     </div>
 
     <div id="creator" class="category">
       <h3>🎥 Creator Tools</h3>
       <div class="product-grid">
-        <div class="product">
-          <h4>Mini Ring Light</h4>
-          <p>Ideal for streaming, selfies, and online classes. Adjustable brightness.</p>
-        </div>
-        <div class="product">
-          <h4>Phone Tripod Stand</h4>
-          <p>Flexible legs, universal grip. For YouTubers and vloggers.</p>
-        </div>
-        <div class="product">
-          <h4>USB Microphone</h4>
-          <p>Clear voice quality for recording, podcasting, or live streams.</p>
-        </div>
-        <div class="product">
-          <h4>Backdrop Green Screen</h4>
-          <p>Perfect for streamers and creators using virtual backgrounds.</p>
-        </div>
-        <div class="product">
-          <h4>LED Softbox Lighting</h4>
-          <p>Professional soft lighting for YouTube or photography studios.</p>
-        </div>
-        <div class="product">
-          <h4>Wireless Lavalier Mic</h4>
-          <p>Clip-on mic with noise reduction for content creators on the move.</p>
-        </div>
+        <!-- Creator tools -->
       </div>
     </div>
+  </section>
+
+  <section id="about">
+    <h2>About Gamer-Hood</h2>
+    <p>We’re building India’s coolest hub for teen gamers, streamers, and creators. Join the movement!</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@gamerhood.in | Instagram: @gamerhood.in</p>
+  </section>
+
+  <section id="faq">
+    <h2>FAQs</h2>
+    <p>Coming soon — shipping, returns, sizing guides and more!</p>
+  </section>
+
+  <script>
+    function showCategory(id) {
+      document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamer-Hood</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #121212ee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      box-shadow: 0 0 10px #00ffea55;
+    }
+    .logo {
+      font-size: 1.5rem;
+      color: #00ffea;
+      text-shadow: 0 0 8px #00ffea;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #00ffea;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .nav-links a:hover {
+      background: #00ffea;
+      color: #000;
+    }
+
+    header {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #0a0a0a, #1f1f1f);
+      animation: fadeIn 2s ease forwards;
+      overflow: hidden;
+      padding-top: 60px;
+    }
+    .animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #00ffea44 0%, transparent 70%);
+      animation: moveBg 10s linear infinite;
+      z-index: 0;
+    }
+    @keyframes moveBg {
+      0% { transform: translate(-25%, -25%); }
+      50% { transform: translate(0%, 0%); }
+      100% { transform: translate(-25%, -25%); }
+    }
+    header h1, header p, .btn {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 6rem;
+      color: #00ffea;
+      text-shadow: 0 0 15px #00ffea;
+      animation: slideDown 1s ease-in-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 10px;
+      animation: slideUp 1s ease-in-out 0.5s;
+      animation-fill-mode: both;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes slideDown {
+      0% { transform: translateY(-100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideUp {
+      0% { transform: translateY(100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border: none;
+      background: #00ffea;
+      color: #000;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #00ffea;
+    }
+
+    section {
+      padding: 80px 50px 50px;
+      text-align: center;
+      background-color: #121212;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #00ffea;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: transparent;
+      color: #00ffea;
+      border: 1px solid #00ffea;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #00ffea;
+      color: #000;
+    }
+
+    .category {
+      margin-top: 40px;
+      display: none;
+    }
+    .category.active {
+      display: block;
+    }
+    .category h3 {
+      color: #00ffeab3;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #00ffeab3;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .product {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffea22;
+      transition: transform 0.4s;
+    }
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #00ffea55;
+    }
+
+    .product h4 {
+      margin-bottom: 10px;
+      color: #00ffea;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 3rem;
+      }
+      .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Gamer-Hood</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQs</a>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="animated-bg"></div>
+    <h1>Gamer-Hood</h1>
+    <p>Your Gear Hub for Gamers, Teens & Creators</p>
+    <a href="#shop"><button class="btn">Shop Now</button></a>
+  </header>
+
+  <section id="shop">
+    <h2>Shop by Category</h2>
+    <div class="filters">
+      <button class="filter-btn active" onclick="showCategory('gaming')">🎮 Gaming Gear</button>
+      <button class="filter-btn" onclick="showCategory('desk')">💡 Desk & Room Setup</button>
+      <button class="filter-btn" onclick="showCategory('creator')">🎥 Creator Tools</button>
+    </div>
+
+    <div id="gaming" class="category active">
+      <h3>🎮 Gaming Gear</h3>
+      <div class="product-grid">
+        <!-- Gaming gear products here -->
+        <div class="product"><h4>RGB LED Strip Light</h4><p>Perfect for gaming setups and cozy vibes.</p></div>
+        <!-- Add more -->
+      </div>
+    </div>
+
+    <div id="desk" class="category">
+      <h3>💡 Desk & Room Setup</h3>
+      <div class="product-grid">
+        <!-- Desk products -->
+      </div>
+    </div>
+
+    <div id="creator" class="category">
+      <h3>🎥 Creator Tools</h3>
+      <div class="product-grid">
+        <!-- Creator tools -->
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Gamer-Hood</h2>
+    <p>We’re building India’s coolest hub for teen gamers, streamers, and creators. Join the movement!</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@gamerhood.in | Instagram: @gamerhood.in</p>
+  </section>
+
+  <section id="faq">
+    <h2>FAQs</h2>
+    <p>Coming soon — shipping, returns, sizing guides and more!</p>
+  </section>
+
+  <script>
+    function showCategory(id) {
+      document.querySelectorAll('.category').forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamer-Hood</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0a0a0a;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #121212ee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+      box-shadow: 0 0 10px #00ffea55;
+    }
+    .logo {
+      font-size: 1.5rem;
+      color: #00ffea;
+      text-shadow: 0 0 8px #00ffea;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #00ffea;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .nav-links a:hover {
+      background: #00ffea;
+      color: #000;
+    }
+
+    header {
+      position: relative;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #0a0a0a, #1f1f1f);
+      animation: fadeIn 2s ease forwards;
+      overflow: hidden;
+      padding-top: 60px;
+    }
+    .animated-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, #00ffea44 0%, transparent 70%);
+      animation: moveBg 10s linear infinite;
+      z-index: 0;
+    }
+    @keyframes moveBg {
+      0% { transform: translate(-25%, -25%); }
+      50% { transform: translate(0%, 0%); }
+      100% { transform: translate(-25%, -25%); }
+    }
+    header h1, header p, .btn {
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 6rem;
+      color: #00ffea;
+      text-shadow: 0 0 15px #00ffea;
+      animation: slideDown 1s ease-in-out;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 10px;
+      animation: slideUp 1s ease-in-out 0.5s;
+      animation-fill-mode: both;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes slideDown {
+      0% { transform: translateY(-100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideUp {
+      0% { transform: translateY(100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border: none;
+      background: #00ffea;
+      color: #000;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #00ffea;
+    }
+
+    section {
+      padding: 80px 50px 50px;
+      text-align: center;
+      background-color: #121212;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #00ffea;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: transparent;
+      color: #00ffea;
+      border: 1px solid #00ffea;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: #00ffea;
+      color: #000;
+    }
+
+    .category {
+      margin-top: 40px;
+      display: none;
+    }
+    .category.active {
+      display: block;
+    }
+    .category h3 {
+      color: #00ffeab3;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      border-bottom: 1px solid #00ffeab3;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .product {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffea22;
+      transition: transform 0.4s;
+    }
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px #00ffea55;
+    }
+
+    .product h4 {
+      margin-bottom: 10px;
+      color: #00ffea;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 3rem;
+      }
+      .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+      }
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Gamer-Hood</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">FAQs</a>
+    </div>
+  </nav>
+
+  <header id="home">
+    <div class="animated-bg"></div>
+    <h1>Gamer-Hood</h1>
+    <p>Your Gear Hub for Gamers, Teens & Creators</p>
+    <a href="#shop"><button class="btn">Shop Now</button></a>
+  </header>
+
+  <section id="shop">
+    <h2>Shop by Category</h2>
+    <div class="filters">
+      <button class="filter-btn active" onclick="showCategory('gaming')">🎮 Gaming Gear</button>
+      <button class="filter-btn" onclick="showCategory('desk')">💡 Desk & Room Setup</button>
+      <button class="filter-btn" onclick="showCategory('creator')">🎥 Creator Tools</button>
+    </div>
+
+    <div id="gaming" class="category active">
+      <h3>🎮 Gaming Gear</h3>
+      <div class="product-grid">
+        <!-- Gaming gear products here -->
+        <div class="product"><h4>RGB LED Strip Light</h4><p>Perfect for gaming setups and cozy vibes.</p></div>
+        <!-- Add more -->
+      </div>
+    </div>
+
+    <div id="desk" class="category">
+      <h3>💡 Desk & Room Setup</h3>
+      <div class="product-grid">
+        <!-- Desk products -->
+      </div>
+    </div>
+
+    <div id="creator" class="category">
+      <h3>🎥 Creator Tools</h3>
+      <div class="product-grid">
+        <!-- Creator tools -->
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Gamer-Hood</h2>
+    <p>We’re building India’s coolest hub for teen gamers, streamers, and creators. Join the movement!</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@gamerhood.in | Instagram: @gamerhood.in</p>
+  </section>
+
+  <section id="faq">
+    <h2>FAQs</h2>
+    <p>Coming soon — shipping, returns, sizing guides and more!</p>
   </section>
 
   <script>
