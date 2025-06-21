@@ -10,7 +10,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
     body {
       font-family: 'Orbitron', sans-serif;
@@ -18,41 +17,34 @@
       color: white;
       overflow-x: hidden;
     }
-
-    /* Navbar */
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #121212ee;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 40px;
-      z-index: 1000;
-      box-shadow: 0 0 10px #00ffea55;
+      padding: 20px 50px;
+      background-color: #121212;
+      box-shadow: 0 2px 10px #00000044;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-    .logo {
-      font-size: 1.5rem;
+    nav h1 {
       color: #00ffea;
-      text-shadow: 0 0 8px #00ffea;
+      font-size: 1.8rem;
     }
-    .nav-links {
+    nav ul {
       display: flex;
-      gap: 20px;
+      list-style: none;
+      gap: 25px;
     }
-    .nav-links a {
-      color: #00ffea;
+    nav ul li a {
+      color: #fff;
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: background 0.3s;
+      transition: color 0.3s;
     }
-    .nav-links a:hover {
-      background: #00ffea;
-      color: #000;
+    nav ul li a:hover {
+      color: #00ffea;
     }
-
     header {
       position: relative;
       height: 60vh;
@@ -63,7 +55,6 @@
       background: linear-gradient(180deg, #0a0a0a, #1f1f1f);
       animation: fadeIn 2s ease forwards;
       overflow: hidden;
-      padding-top: 60px;
     }
     .animated-bg {
       position: absolute;
@@ -124,9 +115,8 @@
       transform: scale(1.1);
       box-shadow: 0 0 15px #00ffea;
     }
-
     section {
-      padding: 80px 50px 50px;
+      padding: 50px;
       text-align: center;
       background-color: #121212;
     }
@@ -134,7 +124,6 @@
       margin-bottom: 20px;
       color: #00ffea;
     }
-
     .filters {
       display: flex;
       justify-content: center;
@@ -156,7 +145,6 @@
       background: #00ffea;
       color: #000;
     }
-
     .category {
       margin-top: 40px;
       display: none;
@@ -172,14 +160,12 @@
       display: inline-block;
       padding-bottom: 5px;
     }
-
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
       margin-top: 20px;
     }
-
     .product {
       background: #1a1a1a;
       padding: 20px;
@@ -191,13 +177,20 @@
       transform: translateY(-10px);
       box-shadow: 0 0 20px #00ffea55;
     }
-
     .product h4 {
       margin-bottom: 10px;
       color: #00ffea;
     }
-
     @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
       header h1 {
         font-size: 3rem;
       }
@@ -205,34 +198,28 @@
         padding: 8px 16px;
         font-size: 0.9rem;
       }
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
     }
   </style>
 </head>
 <body>
-
   <nav>
-    <div class="logo">Gamer-Hood</div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="#faq">FAQs</a>
-    </div>
+    <h1>Gamer-Hood</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#gaming">Gaming Gear</a></li>
+      <li><a href="#desk">Desk Setup</a></li>
+      <li><a href="#creator">Creator Tools</a></li>
+    </ul>
   </nav>
 
-  <header id="home">
+  <header>
     <div class="animated-bg"></div>
     <h1>Gamer-Hood</h1>
     <p>Your Gear Hub for Gamers, Teens & Creators</p>
-    <a href="#shop"><button class="btn">Shop Now</button></a>
+    <button class="btn">Shop Now</button>
   </header>
 
-  <section id="shop">
+  <section>
     <h2>Shop by Category</h2>
     <div class="filters">
       <button class="filter-btn active" onclick="showCategory('gaming')">🎮 Gaming Gear</button>
@@ -243,40 +230,88 @@
     <div id="gaming" class="category active">
       <h3>🎮 Gaming Gear</h3>
       <div class="product-grid">
-        <!-- Gaming gear products here -->
-        <div class="product"><h4>RGB LED Strip Light</h4><p>Perfect for gaming setups and cozy vibes.</p></div>
-        <!-- Add more -->
+        <div class="product">
+          <h4>RGB LED Strip Light</h4>
+          <p>Perfect for gaming setups and cozy vibes. Plug & play with remote control.</p>
+        </div>
+        <div class="product">
+          <h4>Gaming Mouse Pad</h4>
+          <p>Extended surface, RGB lighting, anti-slip base. Pure gamer feel.</p>
+        </div>
+        <div class="product">
+          <h4>Gaming Headset</h4>
+          <p>Immersive sound with noise-cancellation and LED effects.</p>
+        </div>
+        <div class="product">
+          <h4>Mobile Gaming Triggers</h4>
+          <p>Responsive triggers for competitive smartphone gaming.</p>
+        </div>
+        <div class="product">
+          <h4>Gaming Controller</h4>
+          <p>Wireless, ergonomic grip with turbo function for consoles and PCs.</p>
+        </div>
       </div>
     </div>
 
     <div id="desk" class="category">
       <h3>💡 Desk & Room Setup</h3>
       <div class="product-grid">
-        <!-- Desk products -->
+        <div class="product">
+          <h4>Desk Cable Organizer</h4>
+          <p>Say goodbye to tangled wires. Clean look for creators and students.</p>
+        </div>
+        <div class="product">
+          <h4>USB Mini Fan</h4>
+          <p>Cool and compact. Perfect for long gaming sessions.</p>
+        </div>
+        <div class="product">
+          <h4>LED Neon Sign</h4>
+          <p>Brighten up your room with custom neon light decor.</p>
+        </div>
+        <div class="product">
+          <h4>Ergonomic Wrist Rest</h4>
+          <p>Supportive cushion for keyboard or mouse to prevent fatigue.</p>
+        </div>
+        <div class="product">
+          <h4>Adjustable Laptop Stand</h4>
+          <p>Keep your laptop cool and aligned at eye level for better posture.</p>
+        </div>
+        <div class="product">
+          <h4>Desk Mat</h4>
+          <p>Sleek, waterproof surface for both keyboard and mouse. Adds style to your desk.</p>
+        </div>
       </div>
     </div>
 
     <div id="creator" class="category">
       <h3>🎥 Creator Tools</h3>
       <div class="product-grid">
-        <!-- Creator tools -->
+        <div class="product">
+          <h4>Mini Ring Light</h4>
+          <p>Ideal for streaming, selfies, and online classes. Adjustable brightness.</p>
+        </div>
+        <div class="product">
+          <h4>Phone Tripod Stand</h4>
+          <p>Flexible legs, universal grip. For YouTubers and vloggers.</p>
+        </div>
+        <div class="product">
+          <h4>USB Microphone</h4>
+          <p>Clear voice quality for recording, podcasting, or live streams.</p>
+        </div>
+        <div class="product">
+          <h4>Backdrop Green Screen</h4>
+          <p>Perfect for streamers and creators using virtual backgrounds.</p>
+        </div>
+        <div class="product">
+          <h4>LED Softbox Lighting</h4>
+          <p>Professional soft lighting for YouTube or photography studios.</p>
+        </div>
+        <div class="product">
+          <h4>Wireless Lavalier Mic</h4>
+          <p>Clip-on mic with noise reduction for content creators on the move.</p>
+        </div>
       </div>
     </div>
-  </section>
-
-  <section id="about">
-    <h2>About Gamer-Hood</h2>
-    <p>We’re building India’s coolest hub for teen gamers, streamers, and creators. Join the movement!</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@gamerhood.in | Instagram: @gamerhood.in</p>
-  </section>
-
-  <section id="faq">
-    <h2>FAQs</h2>
-    <p>Coming soon — shipping, returns, sizing guides and more!</p>
   </section>
 
   <script>
